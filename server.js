@@ -14,6 +14,10 @@ app.use(bodyParser.json());
 const klaviyoAPIKey = process.env.klaviyoAPIKey; // Private API Key
 const listId = process.env.listId; // List ID
 
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 // Step 1: Create or update profile
 async function createOrUpdateProfile(email, phone) {
   const response = await fetch("https://a.klaviyo.com/api/profiles/", {
